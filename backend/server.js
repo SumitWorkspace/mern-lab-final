@@ -16,4 +16,7 @@ app.post('/api/login', (req, res) => {
   res.status(401).send("Fail");
 });
 
-app.listen(5000, () => console.log("Server on 5000"));
+// This tells the server to use Render's port, or 5000 if running locally
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
