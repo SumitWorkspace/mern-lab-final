@@ -16,7 +16,7 @@ const Login = () => {
     setLoading(true);
     setMsg({ type: '', text: '' });
     try {
-      const res = await axios.post('http://localhost:5000/api/login', data);
+      const res = await axios.post('https://mern-lab-final.onrender.com/api/login', data);
       localStorage.setItem('token', res.data.token);
       setMsg({ type: 'success', text: 'Authentication successful!' });
       setTimeout(() => window.location.href = "/dashboard", 1200);
